@@ -1,0 +1,17 @@
+syntax = "proto3";
+package controller;
+option go_package = "proto/controller";
+
+message Result {
+    bool status = 1;
+    string message = 2;
+}
+
+message Application {
+    string id = 1;
+    string name = 2;
+}
+
+service Controller {
+    rpc SetApplication(Application) returns (Result);
+}
